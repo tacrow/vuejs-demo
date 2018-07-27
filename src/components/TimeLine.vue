@@ -2,10 +2,8 @@
 	<main class="mdl-layout__content">
 		<div class="page-content">
 			<search></search>
-			<card
-			v-for="gif in gifs"
-			:gif="gif"
-			></card>
+      <!-- v-for: 件数分を繰り返し -->
+			<card v-for="gif in gifs" :gif="gif"></card>
 		</div>
 	</main>
 </template>
@@ -17,6 +15,7 @@ import {mapGetters} from 'vuex'
 
 export default {
 	computed: {
+    // storeで定義したgettersの値をコンポーネントから利用できるようにする
 		...mapGetters(['gifs'])
 	},
 	components: {
